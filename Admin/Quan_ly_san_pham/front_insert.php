@@ -1,0 +1,137 @@
+<?php session_start();
+   if(empty($_SESSION['id_admin']) || empty($_SESSION['name'])){
+    echo "Không có quyền truy cập vào !";
+   } else {
+
+?>
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Thêm sản phẩm</title>
+        <link rel="stylesheet" href="../../File CSS/front_change_pas.css">
+        <link rel="stylesheet" href="../../File CSS/dashboard_admin.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+        <style>
+           .err{
+               padding-top:10px;
+               color:red;
+               margin-left:100px;
+           }
+           .sucess{
+                padding-top:10px;
+               color:green;
+               margin-left:100px; 
+           }
+           #btn1{
+            display: inline-block; 
+             background: #ff523b;
+             padding: 8px 30px;
+             margin: 30px 0;
+             border-radius: 30px;
+             transition: 0.5s;
+              text-decoration:none;
+           }
+           #btn1 a{
+            color:#fff;
+           }
+        </style>
+    </head>
+    <body>
+
+
+<?php
+   include '../Common/sidebar_admin.php'; 
+?>
+
+
+ <!--main container start-->
+ <div class="main-container">
+    <div class="header2">
+    <div class="my_profile">
+    <div class="top">
+    <h1>Thêm sản phẩm </h1>
+    <p>Nơi thêm sản phẩm cho người dùng.</p>
+    </div>   
+    <hr>
+   
+    <?php include 'process_insert.php' ?>
+
+    <div class="sucess"><?php echo $msg_sucess ?></div>
+    <form enctype='multipart/form-data' action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+      <label>Tên sản phẩm</label>
+      <input type="text" name="ten_san_pham" value="<?php echo $product ?>" >
+      <span class="err"><?php echo $errProduct ?></span>
+
+      <label>Giá</label>
+      <input type="number" name="gia" value="<?php echo $price ?>">
+      <span class="err"><?php echo $errPrice ?></span>
+       
+      <label>Số lượng</label>
+      <input type="number" name="so_luong" value="<?php echo $quality ?>">
+      <span class="err"><?php echo $errQuality ?></span>
+       
+      <label>Ảnh sản phẩm</label>
+      <img id="img" onclick="img()"  width="150px" height="150px" src="<?php if(!empty($ten_file_anh)){echo $thu_muc_anh .  $ten_file_anh;} else { echo "../../File image/plus.png";} ?>" >
+      <input type="hidden" name="file_anh_old" id="file" value="<?php echo   $ten_file_anh ?>">
+      <input type="file" name="file_anh" id="file">
+      <span class="err"><?php echo $errImage ?></span>
+      
+      
+      <label>Mô tả</label>
+      <textarea name="mo_ta" id="" cols="80" rows="10"><?php echo $comment ?></textarea><br>
+      <span class="err"><?php echo $errComment ?></span>
+        
+      <label>Tên hãng</label>
+      <input type="text" name="ten_hang" value="<?php echo $maker ?>" >
+      <span class="err"><?php echo $errMaker ?></span>
+
+       <label>Đánh mục</label><br>
+       <select name="ma_danh_muc">
+       <option value="<?php echo $list ?>">Mặc Định</option>
+       <?php foreach($result_danh_muc as $danh_muc): ?>
+          <option value="<?php echo $danh_muc['id'] ?>"
+          <?php if($danh_muc['id'] == $list) echo "selected"; ?>
+          >
+          <?php echo $danh_muc['ten_danh_muc'] ?>
+          </option>
+          <?php endforeach ?>
+          </select><br>
+       <span class="err"><?php echo $errList ?></span>
+      <br>
+      <input type="hidden" name="tinh_trang" value="1">
+      <button type="submit" class="btn" name="submit">Thêm</button>
+      <button id="btn1"><a href="front_insert.php" >Đặt lại</a></button>
+    </form>
+    
+ 
+
+    </div>
+    </div>
+   
+  </div>
+            <!--main container end-->
+
+   <script type="text/javascript">
+        $(document).ready(function(){
+            $(".sidebar-btn").click(function(){
+                $(".wrapper").toggleClass("collapse");
+            });
+        });
+        </script>
+
+ 
+ <script>
+       function img() {
+           document.getElementById("file").click();
+       }
+
+ </script>
+    
+  
+
+</body>
+</html>
+<?php } ?>
