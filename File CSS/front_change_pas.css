@@ -1,0 +1,145 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.header2{
+    width: 100%;
+    height: 630px;
+ 
+}
+.top{
+    margin-left: 50px;
+    margin-top: 20px;
+}
+h1{
+    font-size: 30px;
+}
+hr{
+    width: 80%;
+
+}
+.my_profile form{
+    margin-left: 50px;
+    margin-top: 30px;
+    
+
+}
+.my_profile label{
+    padding-left: 25px;
+    color: rgb(168, 168, 168);
+    margin-top: 10px;
+    display: block;
+}
+.my_profile input{
+    display: block;
+    margin-top: 15px;
+    margin-left: 90px;
+    height: 30px;
+    width: 50%;
+    border: 0.5px solid rgb(245, 110, 0) ;
+}
+#forgot_pas{
+    margin-left: 70px;
+}
+button{
+    
+    border: #ff523b;
+}
+.btn{
+    display: inline-block;
+    background: #ff523b;
+    color: #fff;
+    padding: 8px 30px;
+    margin: 30px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 280px;
+}
+.btn:hover{
+    background: rgba(39, 17, 2, 0.747);
+    transition: 0.5s;
+}
+form #gender{
+    display: inline-block;
+    width: 25px;
+    height: 15px;
+}
+
+
+.header2 table{
+   width: 100%;
+   height: 100%;
+   border: 0.1px solid rgb(243, 57, 33);
+   margin-top: 50px;
+}
+
+.header2 table th{
+    color: #fff;
+    background-color: #ff523b;
+}
+.header2 table td{
+    border:0.001px solid #ff523b ;
+    text-align: center;
+    padding-top: 10px;
+  
+}
+
+select{
+    border: 1px solid #ff523b;
+    padding: 5px;
+    margin-left: 90px;
+}
+select:focus{
+    outline: none;
+}
+/*modal form*/
+
+#file{
+    border: none;
+}
+
+textarea{
+    margin-left: 90px;
+    border:0.5px solid #ff523b;
+}
+
+#img{
+    margin-left: 90px;
+}
+form #username{
+    margin-left: 100px;
+    margin-top: 5px;
+}
+
+.Tong_so_trang{
+    margin-left: 50px;
+    margin-top: 10px;
+    color: #ff523b;
+}
+
+.page-btn{
+    margin: 0 auto 80px;
+}
+.page-btn span{
+    display: inline-block;
+    border: 1px solid #ff523b;
+    margin-left: 10px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    font-family: 'Times New Roman';
+}
+.page-btn span:hover{
+    background: #ff523b;
+    color: #fff;
+}
+.page-btn span a{
+    text-decoration: none;
+    color:#1a1818;
+}
+.page-btn span a:hover{
+    color: #fff;
+}
+

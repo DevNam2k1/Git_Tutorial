@@ -1,0 +1,69 @@
+/* comment_product */
+.small-container .comment{
+    width: 100%;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.small-container #comment_name{
+    border-radius: 50px;
+    width: 500px;
+    height: 30px;
+    border: 1px solid orangered;
+}
+.small-container #comment_content{
+    width: 1000px;
+    height: 100px;
+    border: 1px solid orangered;
+    margin-top: 20px;
+  
+}
+.small-container #submit{
+    display: inline-block; 
+    background: #ff523b;
+    color: #fff;
+    padding: 8px 30px;
+    margin: 30px 0;
+    border-radius: 30px;
+    transition: 0.5s; 
+    cursor: pointer;
+    width: 300px;
+}
+.small-container #submit:hover{
+    background: #563434;
+    cursor: pointer;
+}
+.small-container .text-danger{
+    color:red;
+}
+.small-container .text-success{
+    color: green;
+}
+.small-container .panel{
+    margin-left: 20px;
+    border: 1px solid rgb(12, 4, 1);
+    margin-top: 20px;
+
+}
+.small-container .panel .panel-heading{
+    background-color: rgba(134, 129, 128, 0.445);
+    height: 30px;
+ 
+}
+.small-container .panel .panel-body{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.small-container .panel .panel-footer{
+    background-color: rgba(126, 120, 118, 0.445);
+    height: 30px;  
+    text-align: center;
+}
+.small-container .reply{
+    border: none;
+    margin-top: 5px;
+    background-color: rgba(228, 123, 85, 0);
+    color: rgb(8, 8, 8);
+    font-size: 16px;
+    cursor: pointer;
+}
